@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.han.nl/schemas/types"
+        xmlns:tns="http://www.han.nl/schemas/types"
+        elementFormDefault="qualified">
+
+    <complexType name="NewsfeedDelivered">
+        <all>
+            <element name="message" type="string"/>
+        </all>
+    </complexType>
+
+    <complexType name="NewsfeedRequested">
+        <all>
+			<element name="paramlist" type="tns:NewsfeedParams" minOccurs="1" maxOccurs="1"/>
+			<element name="operation" type="tns:showNewsFeed" minOccurs="1" maxOccurs="1"/>
+        </all>
+    </complexType>
+
+	<complexType name="NewsfeedParams">
+		<sequence>
+			<element name="param" type="string" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+    <simpleType name="showNewsFeed">
+    </simpleType>
+</schema>
